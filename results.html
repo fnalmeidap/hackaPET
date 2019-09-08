@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/results.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yarin</title>
+</head>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        fillContent();
+    });
+
+    function fillContent() {
+        let responses = JSON.parse(localStorage.getItem("responses"));
+        let quantidade = JSON.parse(localStorage.getItem("quantidade"));
+        console.log(responses)
+        console.log(quantidade)
+        
+        for(let i = 0; i < quantidade; i++){
+            for (let j = 0; j < quantidade; i++){
+
+                if(responses[i][j].estabelecimento == "restaurante"){
+
+                            let rank = responses[0][j].valor;
+                        let lvl = "jkdjd"                
+                        
+                        if(rank < 50){
+                            lvl = "$"
+                        }else if(rank >= 50 && rank < 100){
+                            lvl = "$$"
+                        }else {
+                            lvl = "$$$"
+                        }
+
+                        let card = document.createElement("div")
+                        card.innerHTML = `<div id="resultado-restaurante">
+                            <img src="img/restaurante.png"> 
+                        <ul>
+                                <li id="est"><a href="https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwj4xv6CjuPjAhU_DrkGHUyqCdUQPAgH" target="blank">${responses[i][j].loja}</a></li>
+                            <li id="endereco">${responses[i][j].endereco.localizacao}</li>
+                            <li id="nota">Nota média: ${responses[i][j].nota.notaSomatorio}</li>
+                            <li id="nota">Nota do site: ${responses[i][j].nota.notaADM}</li>
+                        </ul>
+                        <p>${lvl}</p>           
+                    </div>`
+                    card.className = "content"
+                    document.getElementById("resultadosPesquisa").appendChild(card);
+                    console.log("foi uma vez")
+
+                }
+
+                if(responses[i][j].estabelecimento == "museu"){
+                            let rank = responses[0][j].valor;
+                        let lvl = "jkdjd"                
+                        
+                        if(rank < 50){
+                            lvl = "$"
+                        }else if(rank >= 50 && rank < 100){
+                            lvl = "$$"
+                        }else {
+                            lvl = "$$$"
+                        }
+
+                        let card = document.createElement("div")
+                        card.innerHTML = `<div id="resultado-museu">
+                            <img src="img/museu.png"> 
+                        <ul>
+                                <li id="est"><a href="https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwj4xv6CjuPjAhU_DrkGHUyqCdUQPAgH" target="blank">${responses[i][j].loja}</a></li>
+                            <li id="endereco">${responses[i][j].endereco.localizacao}</li>
+                            <li id="nota">Nota média: ${responses[i][j].nota.notaSomatorio}</li>
+                            <li id="nota">Nota do site: ${responses[i][j].nota.notaADM}</li>
+                        </ul>
+                        <p>${lvl}</p>           
+                    </div>`
+                    card.className = "content"
+                    document.getElementById("resultadosPesquisa").appendChild(card);
+                    console.log("foi uma vez")
+                    
+                }
+
+                if(responses[i][j].estabelecimento == "escola"){
+
+                            let rank = responses[0][j].valor;
+                        let lvl = "jkdjd"                
+                        
+                        if(rank < 50){
+                            lvl = "$"
+                        }else if(rank >= 50 && rank < 100){
+                            lvl = "$$"
+                        }else {
+                            lvl = "$$$"
+                        }
+
+                        let card = document.createElement("div")
+                        card.innerHTML = `<div id="resultado-escola">
+                            <img src="img/escola.png"> 
+                        <ul>
+                                <li id="est"><a href="https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwj4xv6CjuPjAhU_DrkGHUyqCdUQPAgH" target="blank">${responses[i][j].loja}</a></li>
+                            <li id="endereco">${responses[i][j].endereco.localizacao}</li>
+                            <li id="nota">Nota média: ${responses[i][j].nota.notaSomatorio}</li>
+                            <li id="nota">Nota do site: ${responses[i][j].nota.notaADM}</li>
+                        </ul>
+                        <p>${lvl}</p>           
+                    </div>`
+                    card.className = "content"
+                    document.getElementById("resultadosPesquisa").appendChild(card);
+                    console.log("foi uma vez")
+                    
+                }
+
+                if(responses[i][j].estabelecimento == "parque"){
+
+                            let rank = responses[0][j].valor;
+                        let lvl = "jkdjd"                
+                        
+                        if(rank < 50){
+                            lvl = "$"
+                        }else if(rank >= 50 && rank < 100){
+                            lvl = "$$"
+                        }else {
+                            lvl = "$$$"
+                        }
+
+                        let card = document.createElement("div")
+                        card.innerHTML = `<div id="resultado-parque">
+                            <img src="img/parque.png"> 
+                        <ul>
+                                <li id="est"><a href="https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwj4xv6CjuPjAhU_DrkGHUyqCdUQPAgH" target="blank">${responses[i][j].loja}</a></li>
+                            <li id="endereco">${responses[i][j].endereco.localizacao}</li>
+                            <li id="nota">Nota média: ${responses[i][j].nota.notaSomatorio}</li>
+                            <li id="nota">Nota do site: ${responses[i][j].nota.notaADM}</li>
+                        </ul>
+                        <p>${lvl}</p>           
+                    </div>`
+                    card.className = "content"
+                    document.getElementById("resultadosPesquisa").appendChild(card);
+                    console.log("foi uma vez")
+                    
+                }
+
+            }
+        }
+    }
+
+
+    
+</script>
+<body>
+    <section id="upper-side">
+        <div class="navbar">
+            <a href="search.html"><img src="img/justica.png"/></a>
+        </div>
+    
+    <div class="row">
+        <h1>RESULTADO</h1>
+    </div>
+    <footer>
+
+    </footer>
+    </section>
+    <section class="showdown">
+        <div class="wrapper">
+            <div class="btn btn-d">
+                <p>Visão</p>
+            </div>
+            <div class="btn btn-d">
+                <p>Audição</p>
+            </div>
+            <div class="btn btn-d">
+                <p>Cadeirante</p>
+            </div>
+            <div class="btn btn-d">
+                <p>IDOSO</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="resultados" id="resultadosPesquisa">
+
+    </section>
+
+
+</body>
+</html>
